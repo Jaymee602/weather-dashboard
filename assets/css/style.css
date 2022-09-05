@@ -95,3 +95,18 @@ input {
     padding: 0.4rem;
     margin-top: 1rem;
 }
+
+#five-day {
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+img {
+    margin: auto;
+}
+
+.hide {
+    display: none
+}

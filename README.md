@@ -1,7 +1,7 @@
 # Weather Dashboard
 
 ## Purpose 
-This weather dashboard allows you to easily access today's weather as well as a five day forecast for a city of your choosing.
+This weather dashboard allows you to easily access the weather for today and tomorrow in a city of your choosing.
 
 ## API 
 [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)

@@ -83,3 +83,7 @@ h1{
     margin: auto;
     padding-top: 1rem;
 }
+
+#date {
+    padding: 1rem;
+}

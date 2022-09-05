@@ -17,31 +17,43 @@ var formSubmitHandler = function(event) {
     var city = citySearch.value.trim();
   
     if (city) {
-    //   getWeather(city);
+       getWeather(city);
     //   getFiveDay(city);
 
-        // save searched city to local storage
-        var saveCity = function(city) {
-            localStorage.setItem("cities", JSON.stringify(city));
-        };
-
         // make search history button
-        function searchHistory() {
-            cityBtn = document.createElement("button");
-            cityBtn.textContent = city;
-            cityBtn.className = "city-btn";
-            searchHistoryContainer.append(cityBtn)
-        };
-  
+        cityBtn = document.createElement("button");
+        cityBtn.textContent = city;
+        cityBtn.className = "city-btn";
+        searchHistoryContainer.append(cityBtn)
+
         // clear search bar
         citySearch.value = "";
-
     } else {
       alert("Please enter a city");
     }
+    
     saveCity(city);
-    searchHistory(city);
 };
+
+var saveCity = function(city) {
+    localStorage.setItem("cities", JSON.stringify(city));
+};
+
+var getWeather = function(city) {
+    var apiURL = `https://api.openweathermap.org/data/2.5/weather?units=imperial&q=${city}&appid=${apiKey}`
+    fetch(apiURL)
+    .then((response) => response.json())
+    .then((data) => {
+        var { name } = data;
+        var { temp, humidity } = data.main;
+        var { speed } = data.wind;
+        document.querySelector('#city').innerText = "Weather in " + name;
+        document.querySelector('#temp').innerText = temp + " °F";
+        document.querySelector('#humidity').innerText = humidity + "%";
+        document.querySelector('#wind').innerText = speed + " MPH";
+    })
+};
+
 
 
 searchForm.addEventListener("submit", formSubmitHandler);

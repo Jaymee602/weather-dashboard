@@ -7,6 +7,8 @@ var searchHistory = document.querySelector('#search-history');
 var searchHistoryContainer = document.querySelector('#search-history-container')
 var fiveDayContainer = document.querySelector('#five-day');
 var forecastContainer = document.querySelector('#forecast');
+var iconContainer = document.querySelector('#icon-container');
+var day1Container = document.querySelector('#day1');
 
 var todaysDate = moment().format('dddd, MMM Do YYYY');
 $("#date").html(todaysDate);
@@ -19,8 +21,8 @@ var formSubmitHandler = function(event) {
     var city = citySearch.value.trim();
   
     if (city) {
-       getWeather(city);
-       getForecast(city);
+        getWeather(city);
+        getForecast(city);
 
         // make search history button
         cityBtn = document.createElement("button");
@@ -68,6 +70,7 @@ var getWeather = function(city) {
 };
 
 var getForecast = function(city) {
+    iconContainer.innerHTML = "";
     var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
     fetch(forecastURL)
     .then((response) => response.json())
@@ -89,7 +92,7 @@ var getForecast = function(city) {
         var createIcon = document.createElement("img")
         var dayOneIcon = (data.list[0].weather[0].icon)
         createIcon.src = "https://openweathermap.org/img/wn/" + dayOneIcon + "@2x.png"
-        fiveDayContainer.appendChild(createIcon)
+        iconContainer.appendChild(createIcon)
 
         // add description of tomorrow's weather
         var day1Description = (data.list[0].weather[0].description)

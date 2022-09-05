@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Kdam+Thmor+Pro&family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
 <body>
@@ -34,20 +44,22 @@
         <section class="col">
             <div id="today" class="card">
                 <h2 id="city">City</h2>
-                <h3 id="date">Date</h3>
-                <p id="temp">Temp</p>
-                <p id="wind">Wind</p>
-                <p id="humidity">humidity</p>
-                <p id="uv-index">UV Index</p>
+                <h4 id="date"></h4>
+                <p>Temp: <span id="temp"></span></p>
+                <p>Wind: <span id="wind"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>UV Index: <span id="uv-index"></span></p>
             </div>
 
             <div class="card">
                 <h3 class="card-headers">5-Day Forecast:</h3>
-                <div id="5-day"></div>
+                <div id="five-day"></div>
             </div>
         </section>
     </main>
     </div>
-    <script src="./assets/js/homepage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

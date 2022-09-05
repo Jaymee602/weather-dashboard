@@ -24,7 +24,9 @@ var formSubmitHandler = function(event) {
         cityBtn = document.createElement("button");
         cityBtn.textContent = city;
         cityBtn.className = "city-btn";
-        searchHistoryContainer.append(cityBtn)
+        cityBtn.setAttribute("type", "submit")
+        searchHistoryContainer.append(cityBtn);
+        cityBtn.addEventListener("click", searchHistoryBtn);
 
         // clear search bar
         citySearch.value = "";
@@ -34,6 +36,11 @@ var formSubmitHandler = function(event) {
     
     saveCity(city);
 };
+
+var searchHistoryBtn = function(event) {
+    var city = event.target.textContent;
+    getWeather(city);
+}
 
 var saveCity = function(city) {
     localStorage.setItem("cities", JSON.stringify(city));
@@ -48,9 +55,9 @@ var getWeather = function(city) {
         var { temp, humidity } = data.main;
         var { speed } = data.wind;
         document.querySelector('#city').innerText = "Weather in " + name;
-        document.querySelector('#temp').innerText = temp + " °F";
-        document.querySelector('#humidity').innerText = humidity + "%";
-        document.querySelector('#wind').innerText = speed + " MPH";
+        document.querySelector('#temp').innerText = "Temp: " + temp + " °F";
+        document.querySelector('#humidity').innerText = "Humidity: " + humidity + "%";
+        document.querySelector('#wind').innerText = "Wind: " + speed + " MPH";
     })
 };
 

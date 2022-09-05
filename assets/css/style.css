@@ -55,10 +55,11 @@ h1{
     padding: 0.8rem;
 }
 
-.city-btn,
 #search-btn {
     background-color: var(--sand);
     color: var(--dark);
+    margin-left: 1rem;
+    padding: 0.5rem;
 }
 
 .city-btn:hover,
@@ -68,6 +69,8 @@ h1{
 }
 
 .city-btn {
+    background-color: var(--sand);
+    color: var(--dark);
     width: 100%;
     padding: 0.3rem;
     margin-top: 0.4rem;
@@ -86,4 +89,9 @@ h1{
 
 #date {
     padding: 1rem;
+}
+
+input {
+    padding: 0.4rem;
+    margin-top: 1rem;
 }

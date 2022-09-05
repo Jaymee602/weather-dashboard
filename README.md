@@ -6,6 +6,9 @@ This weather dashboard allows you to easily access the weather for today and tom
 ## API 
 [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
 
+## Preview
+![Website preview](./assets/img/preview.jpg)
+
 ## Built With
 * HTML
 * CSS/BootStrap
